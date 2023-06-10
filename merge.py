@@ -19,10 +19,10 @@ def merge_csv(instance, target_pod, rep):
                 csvreader = csv.reader(f)
                 for row in csvreader:
                     r = copy.deepcopy(row[:])
-                    r.append(str(x))
+                    # r.append(str(x))
                     writer.writerow(r)
 
 
-if __name__ == "__main__":
-    merge_csv('mec', 1, 1)
-    merge_csv('jetson', 1, 1)
+# if __name__ == "__main__":
+#     merge_csv('mec', 1, 1)
+#     merge_csv('jetson', 1, 1)

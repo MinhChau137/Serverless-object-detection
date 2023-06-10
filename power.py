@@ -1,4 +1,4 @@
-HOST = "127.0.0.1"
+HOST = "192.168.2.2"
 PORT = 4223
 UID_DC = "23iX" # Change XYZ to the UID of your Voltage/Current Bricklet 2.0
 UID_AC = "Uos"
@@ -44,8 +44,8 @@ if __name__ == "__main__":
     # pw.set_power_callback_configuration(1000, False, ">", 1*1000, 0)
     while True:
         print("Jetson power: " + str(pw.get_power()/1000.0) + " W")
-        voltage, current, energy, real_power, apparent_power, reactive_power, power_factor, frequency = em.get_energy_data()
-        print("MEC Power: " + str(real_power/100.0) + " W")
+        # voltage, current, energy, real_power, apparent_power, reactive_power, power_factor, frequency = em.get_energy_data()
+        # print("MEC Power: " + str(real_power/100.0) + " W")
         time.sleep(0.5)
     
     input("Press key to exit\n") # Use raw_input() in Python 2

@@ -29,11 +29,11 @@ if __name__ == "__main__":
             p0 = Process(target=functional_methods.auto_delete, args=(event, ))
             p0.start()
 
-            node = 'mec'
-            image = 'x86'
-            main.collect_life_cycle(
-                node, image, int(target_pod), int(rep), event)
-            merge.merge_csv(node,target_pod,rep)
+            # node = 'mec'
+            # image = 'x86'
+            # main.collect_life_cycle(
+            #     node, image, int(target_pod), int(rep), event)
+            # merge.merge_csv(node,target_pod,rep)
 
             node = 'jetson'
             image = 'arm'
@@ -42,8 +42,9 @@ if __name__ == "__main__":
             # variables.JETSON_USERNAME = 'end'
             # variables.WRONG_IMAGE_NAME = variables.HEAVY_WRONG_IMAGE_NAME_ARM
             # variables.IMAGE_NAME = variables.HEAVY_IMAGE_NAME_ARM
-            # main.collect_life_cycle(
-            #     node, image, int(target_pod), int(rep), event)
+            main.collect_life_cycle(
+                node, image, int(target_pod), int(rep), event)
+            merge.merge_csv(node,target_pod,rep)
             p0.join()
             time.sleep(30)
             # p1 = Process(target=collect_life_cycle, args=(event, int(target_pods_scale), repeat_time, ), daemon = True)

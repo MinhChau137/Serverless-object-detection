@@ -14,7 +14,7 @@ from multiprocessing.pool import ThreadPool
 import subprocess
 import os
 import signal
-from power import pw,em
+from power import pw, em
 from variables import *
 import k8s_API
 from time import sleep
@@ -111,11 +111,12 @@ def get_curl_values_and_update_job(URL: str, host: str, image: str, target_pods:
         print(ex)
 
 
-def get_prometheus_values_and_update_job(host: str, image: str, target_pods: int, repetition: int, job: str):
+def get_prometheus_values_and_update_job(host: str, image: str, target_pods: int, repetition: str, job: str):
     if host == 'jetson':
         values_power = pw.get_power()/1000.0
     else:
-        voltage, current, energy, real_power, apparent_power, reactive_power, power_factor, frequency = em.get_energy_data()
+        # voltage, current, energy, real_power, apparent_power, reactive_power, power_factor, frequency = em.get_energy_data()
+        real_power = 100000
         values_power = real_power/100.0
     values_nw = get_bytes()
     values_per_cpu_in_use = get_data_from_api(
@@ -134,7 +135,7 @@ def get_prometheus_values_and_update_job(host: str, image: str, target_pods: int
         writer = csv.writer(open(DATA_PROMETHEUS_FILE_DIRECTORY.format(
             str(host), str(image), str(target_pods), str(repetition), generate_file_time), 'a'))
         writer.writerow([values_memory[0], datetime.utcfromtimestamp(values_memory[0]).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3], values_running_pods,
-                         values_power, values_per_cpu_in_use[1], values_per_gpu_in_use[1], values_memory[1], values_nw, job])
+                         values_power, values_per_cpu_in_use[1], values_per_gpu_in_use[1], values_memory[1], values_nw, repetition])
     except Exception as ex:
         print(ex)
     # if TEST_MODE: print("Current pods: %s, target: %d" % (curr_pods, (int(target_pods)+POD_EXSISTED)))
