@@ -99,7 +99,7 @@ HEAVY_IMAGE_NAME_X86 = "docker.io/kiemtcb/detection-object:4.2x86@sha256:326e47e
 HEAVY_WRONG_IMAGE_NAME_X86 = "docker.io/kiemtcb/detection-ob:4.2x86@sha256:326e47e0290094fcfe71e14674173b156bac7e12d211051d77c6e78d37a55d04"  # SHA code is required
 LIGHT_IMAGE_NAME_X86 = "docker.io/mc0137/detect_abnormal:v1.4@sha256:3ba0c98c26a48d6afe4df6945551f4ac956f8c1fcb9f1837b3e9a8187f09d2d8"  # SHA code is required
 LIGHT_WRONG_IMAGE_NAME_X86 = "docker.io/mc0137/detect_ab:v1.4@sha256:3ba0c98c26a48d6afe4df6945551f4ac956f8c1fcb9f1837b3e9a8187f09d2d8"  # SHA code is required
-LIGHT_IMAGE_NAME_ARM = "docker.io/mc0137/detect_abnormal:arm1.1@sha256:ea4866fffee1c5536c59e0850b4d8acbbdb655a4a575f6fbbe904a0e38e23a27"  # SHA code is required
+LIGHT_IMAGE_NAME_ARM = "docker.io/mc0137/detect_abnormal:arm1.4@sha256:0e8ee05c5d256abc89f6f98fb3b4f40863a97ff7b43dfb6c92f7a8024cc049f4"  # SHA code is required
 LIGHT_WRONG_IMAGE_NAME_ARM = "docker.io/mc0137/detect_ab:arm1.1@sha256:ea4866fffee1c5536c59e0850b4d8acbbdb655a4a575f6fbbe904a0e38e23a27"  # SHA code is required
 PROXY_IMAGE_NAME = "b371fa5b70540"
 

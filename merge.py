@@ -6,7 +6,7 @@ import copy
 
 def merge_csv(instance, target_pod, rep):
     status = ['null_state', 'null_to_cold_process', 'warm_disk_state', 'warm_disk_to_warm_cpu_process', 'warm_cpu_state',
-              'active_state', 'warm_cpu_to_warm_disk_process', 'warm_disk_to_cold_process', 'cold_state', 'cold_to_warm_disk_process', 'cold_to_null_process', 'warm_mem_to_warm_disk_process', 'warm_mem_to_warm_disk_process']
+              'active_state', 'warm_cpu_to_warm_disk_process', 'warm_disk_to_cold_process', 'cold_state', 'cold_to_warm_disk_process', 'cold_to_null_process', 'warm_mem_to_warm_disk_process']
     path = DEFAULT_DIRECTORY + "/data/resource/"
     writeFileName = DEFAULT_DIRECTORY + '/data/' + \
         "target_pod_"+str(target_pod)+"_repeat_"+str(rep)+"_" + \
@@ -23,6 +23,6 @@ def merge_csv(instance, target_pod, rep):
                     writer.writerow(r)
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 #     merge_csv('mec', 1, 1)
-    merge_csv('jetson', 1, 1)
+    # merge_csv('jetson', 1, 1)
