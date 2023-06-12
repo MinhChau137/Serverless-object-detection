@@ -29,14 +29,14 @@ if __name__ == "__main__":
             p0 = Process(target=functional_methods.auto_delete, args=(event, ))
             p0.start()
 
-            node = 'mec'
-            image = 'x86'
+            # node = 'mec'
+            # image = 'x86'
             # main.collect_life_cycle(
             #     node, image, int(target_pod), int(rep), event)
             # merge.merge_csv(node,target_pod,rep)
 
-            # node = 'jetson'
-            # image = 'arm'
+            node = 'jetson'
+            image = 'arm'
             # variables.INSTANCE = 'jetson'
             # variables.JETSON_IP = '192.168.1.2'
             # variables.JETSON_USERNAME = 'end'
