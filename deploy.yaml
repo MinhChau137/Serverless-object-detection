@@ -10,8 +10,8 @@ spec:
         autoscaling.knative.dev/window: 6s
     spec:
       containers:
-      - image: docker.io/mc0137/detect_abnormal:arm1.4@sha256:0e8ee05c5d256abc89f6f98fb3b4f40863a97ff7b43dfb6c92f7a8024cc049f4
+      - image: docker.io/mc0137/detect_abnormal:v1.6@sha256:7c9e3763d0d532d5976e37ff309eea6fe446b7242570f92bc4d2c760abb46a3a
         ports:
         - containerPort: 8080
       nodeSelector:
-        kubernetes.io/hostname: jetson
+        kubernetes.io/hostname: mec
